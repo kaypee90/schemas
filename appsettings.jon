@@ -1,0 +1,66 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "ConnectionStrings": {
+      "type": "object",
+      "properties": {
+        "DefaultConnection": {
+          "type": "string",
+          "description": "Connection string to a database"
+        }
+      },
+      "required": [
+        "DefaultConnection"
+      ],
+      "additionalProperties": false
+    },
+    "Logging": {
+      "type": "object",
+      "properties": {
+        "LogLevel": {
+          "type": "object",
+          "properties": {
+            "Default": {
+              "type": "string",
+              "default": "Information",
+              "examples": [
+                "Information"
+              ]
+            },
+            "Microsoft.AspNetCore": {
+              "type": "string",
+              "default": "Warning",
+              "examples": [
+                "Warning"
+              ]
+            }
+          },
+          "required": [
+            "Default",
+            "Microsoft.AspNetCore"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "LogLevel"
+      ],
+      "additionalProperties": false
+    },
+    "AllowedHosts": {
+      "type": "string",
+      "default": "*",
+      "examples": [
+        "*"
+      ]
+    }
+  },
+  "required": [
+    "ConnectionStrings",
+    "Logging",
+    "AllowedHosts"
+  ],
+  "additionalProperties": false
+}
